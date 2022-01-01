@@ -1,0 +1,2 @@
+"use strict";var pricingValue=document.querySelector(".pricing-value"),updatePricingValue=function(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:15;pricingValue.textContent="$".concat(e,".00")};updatePricingValue();
+//# sourceMappingURL=script.js.map

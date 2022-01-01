@@ -1,0 +1,376 @@
+@use "../util" as *;
+
+.pricing-circles img {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pricing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  max-width: 540px;
+  width: 100%;
+  height: 400px;
+
+  padding: 2rem 3rem;
+  margin: 0 auto;
+
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px var(--lightgrayishblue);
+  z-index: 10;
+  position: relative;
+  @include for-phone-only {
+    width: 375px;
+    height: 560px;
+    padding: 2rem 1rem;
+  }
+}
+
+.pricing-stats {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 0.5rem;
+  font-weight: 800;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: var(--grayishblue);
+  @include for-phone-only {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.pricing-slider {
+  width: 100%;
+  @include for-phone-only {
+    position: absolute;
+    margin: 2rem 0;
+  }
+}
+.pricing-value {
+  width: max-content;
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: var(--darkdesaturatedblue);
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 6.5rem;
+  position: relative;
+  @include for-phone-only {
+    position: absolute;
+    top: 145px;
+    left: 50%;
+    transform: translateX(-75%);
+  }
+  &::after {
+    content: "/ month";
+    font-weight: 800;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    color: var(--grayishblue);
+    position: absolute;
+    top: 50%;
+    right: -76px;
+    transform: translateY(-50%);
+  }
+  @include for-phone-only {
+    margin: 0;
+    &::after {
+      content: "/ month";
+      font-weight: 800;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      color: var(--grayishblue);
+      position: absolute;
+      top: 50%;
+      right: -76px;
+      transform: translateY(-50%);
+    }
+  }
+}
+#pricing-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  margin-top: 1rem;
+  cursor: grab;
+  @include for-phone-only {
+    width: 85%;
+    display: block;
+    margin: 1rem auto;
+  }
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+  &:focus-within {
+    outline: 3px dotted green;
+  }
+  &::-ms-track {
+    width: 100%;
+    cursor: grab;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+  }
+  //chrome
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: 1px solid var(--lightgrayishblue);
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: var(--softcyan);
+    background-image: url(../../../app/media/images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    cursor: grab;
+    margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+    &:active {
+      cursor: grabbing;
+      background: var(--strongcyan);
+      background-image: url(../../../app/media/images/icon-slider.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%;
+    }
+  }
+  //firefox
+  &::-moz-range-thumb {
+    box-shadow: 0 10px 10px var(--softcyan);
+    width: 20px;
+    height: 20px;
+    scale: 2;
+    background: var(--strongcyan);
+    border-radius: 50%;
+    border: 1px solid var(--lightgrayishblue);
+    background-image: url(../../../app/media/images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    &:hover {
+      background: var(--softcyan);
+      background-image: url(../../../app/media/images/icon-slider.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%;
+    }
+    &:active {
+      cursor: grabbing;
+      background: var(--strongcyan);
+      background-image: url(../../../app/media/images/icon-slider.svg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 50%;
+    }
+  }
+
+  //chrome
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: var(--lightgrayishblue);
+    border-radius: 25px;
+    border: none;
+  }
+  &:focus::-webkit-slider-runnable-track {
+    border: 2px dotted green;
+  }
+  //firefox
+  &::-moz-range-track {
+    background-color: var(--lightgrayishblue);
+    height: 8px;
+    border-radius: 25px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+  }
+  &::-moz-range-progress {
+    background: linear-gradient(to right, var(--strongcyan), var(--softcyan));
+  }
+  //ie
+  &::-ms-track {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    width: 20px;
+    height: 20px;
+    scale: 2;
+    background: var(--softcyan);
+    border-radius: 50%;
+    border: 1px solid var(--lightgrayishblue);
+  }
+  &::-ms-fill-lower {
+    background: #2a6495;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+
+  &::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  }
+}
+.billing {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 12px;
+  color: var(--grayishblue);
+  position: relative;
+  &::after {
+    content: "25% discount";
+    color: var(--lightred);
+    background-color: var(--lightgrayishred);
+    border-radius: 25px;
+    padding: 0.1rem 0.4rem;
+    font-size: 10px;
+    @include for-phone-only {
+      content: "-25%";
+      position: absolute;
+      right: 0;
+    }
+  }
+  @include for-phone-only {
+    margin-top: 11rem;
+  }
+}
+.billing-monthly {
+  margin: 0 1rem;
+  @include for-phone-only {
+    margin: 0;
+  }
+}
+.billing-yearly {
+  margin: 0 1rem;
+  @include for-phone-only {
+    margin: 0;
+  }
+}
+.billing-switch-label {
+  position: relative;
+  display: inline-block;
+  width: 49px;
+  height: 25px;
+  margin: 0 1rem;
+  background-color: var(--lightgrayishblue2);
+  border-radius: 25px;
+}
+.billing-switch {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  &:focus + .billing-slider {
+    box-shadow: 0 0 1px var(--lightgrayishblue);
+    background-color: var(--softcyan);
+    border-radius: 25px;
+    outline: 3px dotted green;
+  }
+  &:checked + .billing-slider::before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+}
+
+.billing-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: transparent;
+  transition: 250ms;
+  -webkit-transition: 250ms;
+  cursor: pointer;
+  &::before {
+    position: absolute;
+    content: "";
+    width: 15px;
+    height: 15px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--white);
+    transition: 250ms;
+    -webkit-transition: 250ms;
+    border-radius: 50%;
+  }
+}
+.divider {
+  border-bottom: 1px solid var(--lightgrayishblue);
+  margin: 3rem 0 2rem 0;
+  width: 540px;
+  height: 1px;
+  display: block;
+  @include for-phone-only {
+    width: 375px;
+  }
+}
+.details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  @include for-phone-only {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.details-pricing {
+  font-size: 12px;
+  color: var(--grayishblue);
+
+  @include for-phone-only {
+    font-size: 14px;
+  }
+  & > * {
+    position: relative;
+    margin: 0.5rem 0;
+    padding-left: 1.5rem;
+    @include for-phone-only {
+      position: initial;
+      text-align: center;
+    }
+    &::before {
+      content: url("../../../app/media/images/icon-check.svg");
+      position: absolute;
+      left: 0;
+      @include for-phone-only {
+        position: initial;
+        padding-right: 1rem;
+      }
+    }
+  }
+}
+.details-button button {
+  background-color: var(--darkdesaturatedblue);
+  color: var(--paleblue);
+  padding: 0.8rem 3.5rem;
+  border-radius: 33px;
+  border: none;
+  font-size: 12px;
+  cursor: pointer;
+  @include for-phone-only {
+    margin-top: 2rem;
+    font-size: 14px;
+  }
+  &:focus-within {
+    outline: 3px dotted green;
+    color: var(--white);
+  }
+  &:hover {
+    color: var(--white);
+  }
+}

@@ -1,0 +1,15 @@
+@use "../util" as *;
+
+footer {
+  font-size: 11px;
+  text-align: center;
+  &:focus-within {
+    outline: 3px dotted green;
+  }
+}
+footer a {
+  color: hsl(228, 45%, 44%);
+  &:focus-within {
+    outline: 3px dotted green;
+  }
+}

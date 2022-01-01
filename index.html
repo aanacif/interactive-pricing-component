@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" type="image/png" sizes="32x32" href="./app/media/images/favicon-32x32.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
+	<title>Frontend Mentor | Interactive pricing component</title>
+	<link rel="stylesheet" href="./dist/style.css">
+	<script defer src="./dist/script.js"></script>
+</head>
+
+<body>
+	<div class="container">
+		<h1>
+			Simple, traffic-based pricing
+		</h1>
+		<h2>
+			Sign-up for our 30-day trial. No credit card required.
+		</h2>
+		<div class="pricing-circles">
+			<img src="./app/media/images/pattern-circles.svg" alt="circles pattern">
+		</div>
+
+		<main>
+			<div class="pricing-container">
+
+				<div class="pricing-stats">
+					100K PAGEVIEWS <span class="pricing-value"></span>
+				</div>
+
+				<div class="pricing-slider">
+					<input type="range" id="pricing-slider" min="5" max="30" step="1" value="15"
+						oninput="updatePricingValue(value)" autocomplete="off">
+				</div>
+
+				<div class="billing">
+					<div class="billing-monthly">Monthly Billing</div>
+					<label class="billing-switch-label">
+						<input type="checkbox" class="billing-switch">
+						<span class="billing-slider"></span>
+					</label>
+					<div class="billing-yearly">Yearly Billing</div>
+				</div>
+
+				<div class="divider"></div>
+
+				<div class="details-container">
+
+					<div class="details-pricing">
+						<div class="detail-1">Unlimited websites</div>
+						<div class="detail-2">100% data ownership</div>
+						<div class="detail-3">Email reports</div>
+					</div>
+
+					<div class="details-button">
+						<button>Start my trial</button>
+					</div>
+
+				</div>
+
+			</div>
+		</main>
+	</div>
+
+	<footer>
+		Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+		Coded by <a href="https://github.com/aanacif" target="_blank">aanacif</a>.
+	</footer>
+
+
+
+
+
+</body>
+
+</html>
