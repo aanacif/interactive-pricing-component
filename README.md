@@ -30,7 +30,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/aanacif/faqAccordionCard](https://github.com/aanacif/faqAccordionCard)
+- Solution URL: [https://www.frontendmentor.io/solutions/interactive-pricing-component-rOmBlsQOu](https://www.frontendmentor.io/solutions/interactive-pricing-component-rOmBlsQOu)
 - Live Site URL: [https://aanacif.github.io/interactive-pricing-component/](https://aanacif.github.io/interactive-pricing-component/)
 
 ## My process
