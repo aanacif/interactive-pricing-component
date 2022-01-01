@@ -14,8 +14,6 @@ This is a solution to the [Interactive pricing component challenge on Frontend M
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -33,7 +31,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/aanacif/faqAccordionCard](https://github.com/aanacif/faqAccordionCard)
-- Live Site URL: [https://aanacif.github.io/faqAccordionCard/](https://aanacif.github.io/faqAccordionCard/)
+- Live Site URL: [https://aanacif.github.io/interactive-pricing-component/](https://aanacif.github.io/interactive-pricing-component/)
 
 ## My process
 

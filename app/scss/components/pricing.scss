@@ -344,7 +344,7 @@
       text-align: center;
     }
     &::before {
-      content: url("../../../app/media/images/icon-check.svg");
+      content: url("./media/images/icon-check.svg");
       position: absolute;
       left: 0;
       @include for-phone-only {
