@@ -14,18 +14,18 @@
 </head>
 
 <body>
-	<div class="container">
-		<h1>
-			Simple, traffic-based pricing
-		</h1>
-		<h2>
-			Sign-up for our 30-day trial. No credit card required.
-		</h2>
-		<div class="pricing-circles">
-			<img src="./app/media/images/pattern-circles.svg" alt="circles pattern">
-		</div>
+	<main>
+		<div class="container">
+			<h1>
+				Simple, traffic-based pricing
+			</h1>
+			<h2>
+				Sign-up for our 30-day trial. No credit card required.
+			</h2>
+			<div class="pricing-circles">
+				<img src="./app/media/images/pattern-circles.svg" alt="circles pattern">
+			</div>
 
-		<main>
 			<div class="pricing-container">
 
 				<div class="pricing-stats">
@@ -33,14 +33,16 @@
 				</div>
 
 				<div class="pricing-slider">
-					<input type="range" id="pricing-slider" min="5" max="30" step="1" value="15"
+
+					<input type="range" id="pricing-slider" aria-labelledby="pricing-slider" min="5" max="30" step="1" value="15"
 						oninput="updatePricingValue(value)" autocomplete="off">
+
 				</div>
 
 				<div class="billing">
 					<div class="billing-monthly">Monthly Billing</div>
-					<label class="billing-switch-label">
-						<input type="checkbox" class="billing-switch">
+					<label for="billing-switch" class="billing-switch-label">
+						<input type="checkbox" class="billing-switch" id="billing-switch">
 						<span class="billing-slider"></span>
 					</label>
 					<div class="billing-yearly">Yearly Billing</div>
@@ -63,7 +65,7 @@
 				</div>
 
 			</div>
-		</main>
+	</main>
 	</div>
 
 	<footer>
